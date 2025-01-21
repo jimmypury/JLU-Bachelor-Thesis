@@ -1,0 +1,44 @@
+\documentclass{JLUThesis}
+\pgfplotsset{compat=1.18}
+\begin{document}
+
+% 封面
+\coverstyle
+\makecover
+
+% 版权授权书
+\cla
+
+% 承诺书
+\commitment
+
+% 页眉样式
+\headerstyle
+
+% 摘要
+\input{chapters/abstract_sc.tex}
+\input{chapters/abstract_en.tex}
+
+% 目录
+\tableofcontents
+\cleardoublepage
+
+%% 正文
+% 内容样式
+\contentstyle
+
+% 正文章节
+\input{chapters/chapter1.tex}
+\input{chapters/chapter2.tex}
+\input{chapters/chapter3.tex}
+% 在此添加更多tex，类似上面的格式
+
+
+% 参考文献
+\bibliography{ref/references.bib}
+\addcontentsline{toc}{chapter}{参考文献}
+
+% 致谢
+\Acknowledgements{\input{chapters/acknowledgement.tex}}
+
+\end{document}

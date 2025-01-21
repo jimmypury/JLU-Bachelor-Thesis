@@ -1,0 +1,79 @@
+\chapter{模板使用示例}
+
+\section{算法排版}
+\LaTeX 提供了 \verb|algorithm| 和 \verb|algorithmic| 宏包,可以方便地排版算法伪代码。下面是一个示例:
+
+\begin{algorithm}
+\caption{二分查找算法}
+\label{alg:binary_search}
+\begin{algorithmic}[1]
+\Procedure{BinarySearch}{$A, x$}
+\State $low \gets 1$
+\State $high \gets length(A)$
+\While{$low \le high$}
+\State $mid \gets \lfloor (low + high) / 2 \rfloor$
+\If{$A[mid] = x$}
+\State \textbf{return} $mid$
+\ElsIf{$A[mid] < x$}
+\State $low \gets mid + 1$
+\Else
+\State $high \gets mid - 1$
+\EndIf
+\EndWhile
+\State \textbf{return} $-1$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\section{图表排版}
+在论文中,图表是重要的组成部分。\LaTeX 提供了 \verb|figure| 和 \verb|table| 环境来排版图表,并支持图表的引用和交叉引用。
+
+\subsection{图片排版}
+下面是一个在 \LaTeX 中插入图片的示例:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{example-image.pdf}
+\caption{示例图片}
+\label{fig:example_image}
+\end{figure}
+
+我们可以使用 \verb|\ref| 命令引用 \ref{fig:example_image} 中的图片。
+
+同理，可以使用一些方法插入代码块，如下 \ref{fig:example_code_block} 所示：
+
+\begin{figure}[!htb]
+    \centerline{\fbox{\parbox{0.8\linewidth}{
+        \code{code test} \\
+        \code{1234567890} \\
+        \code{qwertyuiop} \\
+        \code{ASDFGHJKL}
+    }}}
+    \caption{\code{code}代码示例}
+    \label{fig:example_code_block}
+\end{figure}
+
+
+\subsection{表格排版}
+表格是另一个常见的元素,\LaTeX 提供了灵活的表格排版功能。下面是一个示例:
+
+\begin{table}[htbp]
+    \centering
+\caption{示例表格}
+\label{tab:example_table}
+\begin{tabular}{c|c|c}
+\hline
+姓名 & 年龄 & 分数 \\
+\hline
+张三 & 20 & 90 \\
+李四 & 22 & 85 \\
+王五 & 19 & 92 \\
+\hline
+\end{tabular}
+
+\end{table}
+
+我们可以使用 \verb|\ref| 命令引用 \ref{tab:example_table} 中的表格。
+
+\section{结论}
+本章通过具体的使用示例,演示了 \LaTeX 模板在算法、图表排版等方面的能力,为读者提供了实践的参考。
